@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Grupo VIP - Glaucia Mosaner | 15 Anos</title>
+  <meta name="description" content="Entre no grupo VIP e fique por dentro de tudo sobre nossa campanha exclusiva de 15 anos" />
+  <meta name="author" content="Glaucia Mosaner" />
+  <meta name="theme-color" content="#f9f8f6" />
+
+  <!-- Carregamento rápido: imagem de fundo e fontes já pedidas no início -->
+  <link rel="preload" href="assets/hero.webp" as="image" type="image/webp" fetchpriority="high" />
+  <link rel="preload" href="assets/fonts/playfair-display-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/inter-500.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Compartilhamento (WhatsApp, Facebook etc.)
+       Depois de publicar, troque "assets/og.jpg" pelo endereço completo, ex: https://seudominio.com.br/assets/og.jpg -->
+  <meta property="og:title" content="Grupo VIP - Glaucia Mosaner | 15 Anos" />
+  <meta property="og:description" content="Entre no grupo VIP e fique por dentro de tudo sobre nossa campanha exclusiva de 15 anos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    @font-face{font-family:"Playfair Display";font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/playfair-display-700.woff2) format("woff2")}
+    @font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-400.woff2) format("woff2")}
+    @font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/inter-500.woff2) format("woff2")}
+
+    :root{
+      --bg:#f9f8f6;          /* creme */
+      --text:#2a2622;        /* título */
+      --bronze:#ac6f39;      /* "Grupo VIP" + botão */
+      --bronze-dark:#965f30;
+      --muted:#7c736a;       /* textos de apoio */
+      --line:rgba(124,115,106,.28);
+      --wa:#32d851;          /* verde do ícone de referência */
+      --serif:"Playfair Display","Times New Roman",Times,Georgia,serif;
+      --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      background:var(--bg);color:var(--text);font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    img{display:block;max-width:100%}
+
+    /* ---------- Hero (tela inteira) ---------- */
+    .hero{
+      position:relative;isolation:isolate;overflow:hidden;
+      min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      padding:40px 24px 88px;           /* respiro embaixo p/ o botão do WhatsApp no celular */
+    }
+    .hero__bg{
+      position:absolute;inset:0;z-index:-2;
+      width:100%;height:100%;
+      object-fit:cover;object-position:50% 30%;
+    }
+    .hero::before{                       /* véu creme por cima da foto */
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:
+        linear-gradient(to top, rgba(249,248,246,.28) 0%, rgba(249,248,246,0) 40%),
+        linear-gradient(to right, rgba(249,248,246,.95) 0%, rgba(249,248,246,.86) 50%, rgba(249,248,246,.6) 100%);
+    }
+
+    .content{
+      width:100%;max-width:26rem;
+      text-align:center;
+      display:flex;flex-direction:column;align-items:center;
+    }
+
+    .title{
+      margin:0 0 40px;
+      font-family:var(--serif);font-weight:700;
+      font-size:clamp(2.35rem, 12.2vw, 3rem);
+      line-height:1.1;letter-spacing:-.025em;color:var(--text);
+    }
+    .title span{display:block;color:var(--bronze)}
+
+    .logo{width:auto;height:40px;margin:0 0 32px}
+
+    .lead{
+      margin:0 0 48px;
+      font-size:1.125rem;line-height:1.6;font-weight:400;color:var(--muted);
+    }
+
+    .cta{
+      display:inline-flex;align-items:center;justify-content:center;
+      height:56px;padding:0 48px;border-radius:10px;
+      background:var(--bronze);color:var(--bg);
+      font-family:var(--sans);font-weight:500;font-size:1.125rem;line-height:1;
+      text-decoration:none;white-space:nowrap;
+      box-shadow:0 20px 60px -15px rgba(172,111,57,.15);
+      transition:background-color .3s ease, transform .3s ease, box-shadow .3s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .cta:hover{background:var(--bronze-dark);transform:translateY(-2px);box-shadow:0 18px 40px -14px rgba(172,111,57,.45)}
+    .cta:active{transform:translateY(0)}
+    .cta:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+
+    .tagline{
+      width:100%;margin-top:64px;
+      display:flex;align-items:center;gap:8px;
+    }
+    .tagline::before,.tagline::after{content:"";flex:1 1 0;min-width:28px;height:1px;background:var(--line)}
+    .tagline p{
+      margin:0;max-width:15.5rem;
+      font-size:.75rem;line-height:1.35;letter-spacing:.05em;text-transform:uppercase;
+      color:var(--muted);text-align:center;
+    }
+
+    /* ---------- Celulares bem estreitos / baixos ---------- */
+    @media (max-width:379px){
+      .lead{font-size:1rem;text-wrap:balance}
+      .lead br{display:none}
+      .cta{padding:0 36px}
+    }
+    @media (max-width:767px) and (max-height:640px){
+      .title{margin-bottom:28px}
+      .logo{margin-bottom:24px}
+      .lead{margin-bottom:32px}
+      .tagline{margin-top:40px}
+    }
+    .rodape-aviso{
+      position:absolute;
+      left:50%;
+      bottom:24px;
+      transform:translateX(-50%);
+      margin:0;
+      width:max-content;
+      max-width:calc(100% - 180px);
+      font-size:.8rem;
+      color:var(--muted);
+      text-align:center;
+    }
+
+
+    /* ---------- Desktop ---------- */
+    @media (min-width:768px){
+      .hero{padding:48px 32px}
+      .content{width:auto;max-width:none;text-align:left;align-items:flex-start}
+      .title{font-size:4.5rem;line-height:1;margin-bottom:32px}
+      .logo{height:48px}
+      .lead{font-size:1.25rem;line-height:1.4}
+      .tagline{gap:16px}
+      .tagline p{max-width:300px;font-size:.875rem;line-height:1.43}
+    }
+
+    /* ---------- Botão flutuante WhatsApp ---------- */
+    .wa-float{
+      position:fixed;z-index:50;
+      right:max(18px, env(safe-area-inset-right));
+      bottom:max(18px, env(safe-area-inset-bottom));
+      width:58px;height:58px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:var(--wa);
+      box-shadow:0 8px 24px -6px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.12);
+      transition:transform .25s ease, box-shadow .25s ease;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .wa-float svg{width:32px;height:32px;display:block}
+    .wa-float::after{                    /* pulso suave para chamar atenção */
+      content:"";position:absolute;inset:0;border-radius:50%;
+      box-shadow:0 0 0 0 rgba(50,216,81,.45);
+      animation:wa-pulse 2.6s ease-out infinite;
+    }
+    .wa-float:hover{transform:scale(1.07);box-shadow:0 12px 28px -6px rgba(0,0,0,.32), 0 2px 6px rgba(0,0,0,.12)}
+    .wa-float:focus-visible{outline:2px solid var(--wa);outline-offset:4px}
+    @keyframes wa-pulse{
+      0%{box-shadow:0 0 0 0 rgba(50,216,81,.45)}
+      70%{box-shadow:0 0 0 14px rgba(50,216,81,0)}
+      100%{box-shadow:0 0 0 0 rgba(50,216,81,0)}
+    }
+    @media (min-width:768px){
+      .wa-float{width:62px;height:62px;right:28px;bottom:28px}
+      .wa-float svg{width:34px;height:34px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .wa-float::after{animation:none}
+      .cta,.wa-float{transition:none}
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1484699313312536');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+  <!-- Meta Pixel Noscript -->
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1484699313312536&ev=PageView&noscript=1"
+  /></noscript>
+
+  <main class="hero">
+    <img class="hero__bg" src="assets/hero.webp" alt="" width="1066" height="1333" fetchpriority="high" decoding="async" />
+
+    <div class="content">
+      <h1 class="title">Entre no nosso <span>Grupo VIP</span></h1>
+
+      <img class="logo" src="assets/logo-dark.png" alt="Glaucia Mosaner" width="233" height="63" />
+
+      <p class="lead">
+        Tenha acesso antecipado a conteúdos,<br />
+        lançamentos e benefícios exclusivos<br />
+        da Glaucia Mosaner.
+      </p>
+
+      <a class="cta" id="cta-vip" href="https://chat.whatsapp.com/H3MkN1yBQsoINZLUCwpWyp" target="_blank" rel="noopener">
+        Acessar Grupo VIP
+      </a>
+
+      <div class="tagline">
+        <p>16 anos inspirando conquistas e construindo histórias de sucesso</p>
+      </div>
+    </div>
+
+    <p class="rodape-aviso">Clique no botão do WhatsApp e fale com uma consultora</p>
+  </main>
+
+
+  <!-- Botão flutuante WhatsApp -->
+  <a class="wa-float" id="wa-float"
+     href="https://wa.me/5518997707707?text=Oii%2C%20gostaria%20de%20fazer%20uma%20curadoria%20e%20or%C3%A7amento%20com%20voc%C3%AAs%21"
+     target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Eventos do Pixel nos cliques (opcional — pode apagar se não quiser)
+    (function(){
+      function track(ev){ try{ if(window.fbq) fbq('track', ev); }catch(e){} }
+      var vip=document.getElementById('cta-vip');
+      var wa=document.getElementById('wa-float');
+      if(vip) vip.addEventListener('click', function(){ track('Lead'); });
+      if(wa)  wa.addEventListener('click',  function(){ track('Contact'); });
+    })();
+  </script>
+</body>
+</html>
